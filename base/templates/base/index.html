@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Content</h1>
+<div>
+    {% for content in contents %}
+    <h3>{{ content.title }} {{ content.genre }}</h3>
+    {% endfor %}
+</div>
+{% endblock content %}
