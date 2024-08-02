@@ -3,8 +3,8 @@
 {% block content %}
 <h1>Content</h1>
 <div>
-    {% for content in contents %}
-    <h3>{{ content.title }} {{ content.genre }}</h3>
+    {% for media in medias %}
+    <h3><a href={% url 'content' media.id %}>{{ media.title }}</a> {{ media.genre }}</h3>
     {% endfor %}
 </div>
-{% endblock content %}
+{% endblock %}
