@@ -38,3 +38,10 @@ def updateMedia(request: HttpRequest, id) -> HttpResponse:
     context = {'form': form}
     return render(request, 'base/update_media.html', context)
 
+def deleteMedia(request: HttpRequest, id) -> HttpResponse:
+    media = Media.objects.get(id=id)
+    if request.method == 'POST':
+        media.delete()
+        return redirect('home')
+    context = {'obj': media}
+    return render(request, 'base/delete.html', context)

@@ -7,6 +7,7 @@
     {% for media in medias %}
     <h3><a href={% url 'content' media.id %}>{{ media.title }}</a> {{ media.genre }} 
         <a href={% url 'update-media' media.id %}>Edit</a>
+        <a href={% url 'delete-media' media.id %}>Delete</a>
     </h3>
     {% endfor %}
 </div>
