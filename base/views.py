@@ -11,3 +11,6 @@ def content(request, id) -> HttpResponse:
     query = Media.objects.get(id=id) 
     context = {'media': query}
     return render(request, 'base/content.html', context)
+
+def register(request) -> HttpResponse:
+    return render(request, 'base/register.html')
