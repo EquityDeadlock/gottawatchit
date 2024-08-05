@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from .models import Media
 from .forms import MediaForm
+from .models import Tag
 
 def index(request) -> HttpResponse:
-    query = Media.objects.all()
-    context = {'medias' : query}
+    medias = Media.objects.all()
+    tags = Tag.objects.all()
+    context = {'medias' : medias, 'tags': tags}
     return render(request, 'base/index.html', context)
 
 def content(request, id) -> HttpResponse:
