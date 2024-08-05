@@ -1,10 +1,26 @@
-<a href="/">
-    <h1>Home</h1>
-</a>
-<a href={% url 'register' %}>
-    <h1>Register</h1>
-</a>
-<a href={% url 'create-media' %}>
-    <h1>Create Media</h1>
-</a>
+<style>
+    .home-navbar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+    }
+</style>
+<div class="home-navbar">
+    <div>
+        <a href="/">
+            <h1>Home</h1>
+        </a>
+    </div>
+    <div>
+        <a href={% url 'register' %}>
+            <h1>Register</h1>
+        </a>
+    </div>
+    <div>
+        <a href={% url 'create-media' %}>
+            <h1>Create Media</h1>
+        </a>
+    </div>
+</div>
 <hr>
