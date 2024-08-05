@@ -1,14 +1,28 @@
 {% extends 'main.html' %}
 
     {% block content %}
-<h1>Content</h1>
+    <style>
+        .home {
+        display: grid;
+    grid-template-columns: 1fr 3fr;
+    }
+    </style>
+<div class="home">
+    <div>
+        <h3>Media Tags</h3>
+        <hr>
+    </div>
 
-<div>
-    {% for media in medias %}
-    <h3><a href={% url 'content' media.id %}>{{ media.title }}</a> {{ media.genre }} 
-        <a href={% url 'update-media' media.id %}>Edit</a>
-        <a href={% url 'delete-media' media.id %}>Delete</a>
-    </h3>
-    {% endfor %}
-</div>
+
+    <div class="media_list">
+        <h1>Content</h1>
+        <div>
+            {% for media in medias %}
+            <h3><a href={% url 'content' media.id %}>{{ media.title }}</a> {{ media.genre }} 
+                <a href={% url 'update-media' media.id %}>Edit</a>
+                <a href={% url 'delete-media' media.id %}>Delete</a>
+            </h3>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
