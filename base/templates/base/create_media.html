@@ -1,7 +1,14 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<div>
+<style>
+.media-create {
+    display: grid;
+    align-items: center;   
+    justify-items: center;   
+}
+</style>
+<div class="media-create">
     <form method="POST" action="">
         {% csrf_token %}
         {{ form.as_p }}
