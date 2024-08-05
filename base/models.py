@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Media(models.Model):
     title = models.CharField(max_length=200)
     genre = models.CharField(max_length=200)
@@ -14,3 +15,13 @@ class Media(models.Model):
 
     def __str__(self)-> str:
         return self.title
+
+class Tags(models.Model):
+    name = models.CharField(max_length=30)
+    count = models.PositiveIntegerField()
+
+    class Meta:
+        ordering = ['-count', 'name']
+
+    def __str__(self) -> str:
+        return self.name
