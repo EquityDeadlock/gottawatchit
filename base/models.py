@@ -16,12 +16,12 @@ class Media(models.Model):
     def __str__(self)-> str:
         return self.title
 
-class Tags(models.Model):
+class Tag(models.Model):
     name = models.CharField(max_length=30)
     count = models.PositiveIntegerField()
 
     class Meta:
-        ordering = ['-count', 'name']
+        ordering = ['-count', '-name']
 
     def __str__(self) -> str:
         return self.name
