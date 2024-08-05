@@ -6,17 +6,23 @@
         display: grid;
     grid-template-columns: 1fr 3fr;
     }
+    .sidebar h3, h4 {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+    .media_list {
+        margin: 0 5em 0 5em;
+    }
     </style>
 <div class="home">
-    <div>
+    <div class="sidebar">
         <h3>Media Tags</h3>
             {% for tag in tags %}
             <h4><a href="/">{{tag.name}}</a></h4> 
             {% endfor %}
         <hr>
     </div>
-
-
     <div class="media_list">
         <h1>Content</h1>
         <div>
