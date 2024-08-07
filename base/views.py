@@ -4,7 +4,9 @@ from .models import Media
 from .forms import MediaForm
 from .models import Tag
 
-def index(request) -> HttpResponse:
+def index(request: HttpRequest) -> HttpResponse:
+    #q = request.GET.get('q')
+    #medias = Media.objects.filter(tags__name=q)
     medias = Media.objects.all()
     tags = Tag.objects.all()
     context = {'medias' : medias, 'tags': tags}

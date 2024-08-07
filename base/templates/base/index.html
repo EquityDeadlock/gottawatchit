@@ -18,8 +18,9 @@
 <div class="home">
     <div class="sidebar">
         <h3>Media Tags</h3>
+            <!-- <h4><a href={% url 'home'%}>All</a></h4> 
             {% for tag in tags %}
-            <h4><a href="/">{{tag.name}}</a></h4> 
+            <h4><a href={% url 'home'%}?q={{tag.name}}>{{tag.name}}</a></h4> 
             {% endfor %}
         <hr>
     </div>
