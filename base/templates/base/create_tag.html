@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+.media-create {
+    display: grid;
+    align-items: center;   
+    justify-items: center;   
+}
+</style>
+<div class="tag-create">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit" />
+    </form>
+</div>
+{% endblock %}

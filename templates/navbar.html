@@ -1,7 +1,7 @@
 <style>
     .home-navbar {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         align-items: center;
         justify-items: center;
     }
@@ -20,6 +20,11 @@
     <div>
         <a href={% url 'create-media' %}>
             <h1>Create Media</h1>
+        </a>
+    </div>
+    <div>
+        <a href={% url 'create-tag' %}>
+            <h1>Create Tag</h1>
         </a>
     </div>
 </div>

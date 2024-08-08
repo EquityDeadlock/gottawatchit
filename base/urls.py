@@ -8,4 +8,5 @@ urlpatterns = [
     path("create-media/", views.createMedia, name="create-media"),
     path("update-media/<str:id>/", views.updateMedia, name="update-media"),
     path("delete-media/<str:id>/", views.deleteMedia, name="delete-media"),
+    path("create-tag/", views.createTag, name="create-tag"),
 ]
