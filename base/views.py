@@ -6,9 +6,11 @@ from .models import Tag
 from .forms import TagForm
 
 def index(request: HttpRequest) -> HttpResponse:
-    #q = request.GET.get('q')
-    #medias = Media.objects.filter(tags__name=q)
-    medias = Media.objects.all()
+    q = request.GET.get('q')  
+    if q:
+        medias = Media.objects.filter(tags__name=q) 
+    else:
+        medias = Media.objects.all()
     tags = Tag.objects.all()
     context = {'medias' : medias, 'tags': tags}
     return render(request, 'base/index.html', context)
